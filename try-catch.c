@@ -13,18 +13,18 @@ int main(void) {
 
     TRY {
         fp = fopen("./myfile.txt", "w+");
-	fputs("Hello world\n", fp);
+        fputs("Hello world\n", fp);
 
-	e = new_FileException("Problem writing to file.");
-	THROW(e);
+        e = new_FileException("Problem writing to file.");
+        THROW(e);
 
-	printf("This message is never shown.");
+        printf("This message is never shown.");
 
     } CATCH (FileException) {
-	printf("%s\n", currentException->message);
+	    printf("%s\n", currentException->message);
 
     } FINALLY {
-	fclose(fp);
-	free(e);
+        fclose(fp);
+        free(e);
     }
 }
