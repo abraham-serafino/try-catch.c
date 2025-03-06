@@ -28,7 +28,7 @@ jmp_buf _buffer;
 #endif # _AMS_TRYCATCH_H_
 
 Exception* new_Exception(ExceptionType type, char* message) {
-    Exception* e = malloc(sizeof(FileException) + sizeof(message));
+    Exception* e = malloc(sizeof(Exception) + sizeof(message));
     e->type = type;
     e->message = message;
 
